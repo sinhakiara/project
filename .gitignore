@@ -20,6 +20,7 @@ parts/
 sdist/
 var/
 wheels/
+<<<<<<< HEAD
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -38,12 +39,47 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 .nox/
+=======
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Output directories
+output/
+logs/
+checkpoints/
+screenshots/
+patterns/
+
+# Test coverage
+htmlcov/
+.tox/
+>>>>>>> main
 .coverage
 .coverage.*
 .cache
 nosetests.xml
 coverage.xml
 *.cover
+<<<<<<< HEAD
 *.py,cover
 .hypothesis/
 .pytest_cache/
@@ -155,3 +191,22 @@ downloads/
 playwright-state/
 cookies.json
 session.json
+=======
+.hypothesis/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Redis dump
+dump.rdb
+
+# Temp files
+*.tmp
+*.temp
+*.log
+>>>>>>> main
