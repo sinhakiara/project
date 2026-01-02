@@ -1,0 +1,112 @@
+version: '3.8'
+
+services:
+  # StealthCrawler API Server
+  crawler-api:
+    build: .
+    container_name: stealth-crawler-api
+    ports:
+      - "8000:8000"
+    environment:
+      - LOG_LEVEL=INFO
+      - API_ENABLED=true
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - ELASTICSEARCH_ENABLED=true
+      - ELASTICSEARCH_HOST=elasticsearch
+    depends_on:
+      - redis
+      - elasticsearch
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - ./checkpoints:/app/checkpoints
+    command: python main.py server --host 0.0.0.0 --port 8000
+    networks:
+      - crawler-network
+
+  # Distributed Worker 1
+  crawler-worker-1:
+    build: .
+    container_name: stealth-crawler-worker-1
+    environment:
+      - LOG_LEVEL=INFO
+      - DISTRIBUTED_MODE=true
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - WORKER_ID=worker-1
+    depends_on:
+      - redis
+      - elasticsearch
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+    networks:
+      - crawler-network
+
+  # Distributed Worker 2
+  crawler-worker-2:
+    build: .
+    container_name: stealth-crawler-worker-2
+    environment:
+      - LOG_LEVEL=INFO
+      - DISTRIBUTED_MODE=true
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - WORKER_ID=worker-2
+    depends_on:
+      - redis
+      - elasticsearch
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+    networks:
+      - crawler-network
+
+  # Redis for distributed crawling
+  redis:
+    image: redis:7-alpine
+    container_name: stealth-crawler-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - crawler-network
+
+  # Elasticsearch for data storage
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    container_name: stealth-crawler-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    networks:
+      - crawler-network
+
+  # Tor for anonymous crawling (optional)
+  tor:
+    image: dperson/torproxy
+    container_name: stealth-crawler-tor
+    ports:
+      - "9050:9050"
+      - "9051:9051"
+    environment:
+      - PASSWORD=stealth
+    networks:
+      - crawler-network
+
+networks:
+  crawler-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+  elasticsearch-data:
