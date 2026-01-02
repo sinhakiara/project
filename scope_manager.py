@@ -144,16 +144,25 @@ class ScopeManager:
         Returns:
             Regex pattern string
         """
-        # Escape special regex characters except * and .
+        # First, replace ** with a placeholder to avoid conflicts
+        # Note: **.domain.com should match api.domain.com, api.v1.domain.com, etc.
+        pattern = pattern.replace('**.', '__DOUBLE_WILDCARD__')
+        
+        # Replace single * with a placeholder
+        # Note: *.domain.com should match api.domain.com but NOT api.v1.domain.com
+        pattern = pattern.replace('*.', '__SINGLE_WILDCARD__')
+        
+        # Escape special regex characters (now * is already replaced)
         escaped = pattern.replace('.', r'\.')
         
-        # Replace ** with regex for multiple subdomain levels
-        # ** matches one or more subdomains
-        escaped = escaped.replace(r'\*\*', r'([a-z0-9]([a-z0-9\-]*[a-z0-9])?\.)+')
+        # Replace placeholders with actual regex patterns
+        # ** matches one or more subdomain levels: api.domain.com, api.v1.domain.com, etc.
+        # Pattern: (subdomain.)+ where subdomain is [a-z0-9]([a-z0-9-]*[a-z0-9])?
+        escaped = escaped.replace('__DOUBLE_WILDCARD__', r'([a-z0-9]([a-z0-9\-]*[a-z0-9])?\.)+')
         
-        # Replace single * with regex for one subdomain level
-        # * matches exactly one subdomain
-        escaped = escaped.replace(r'\*', r'[a-z0-9]([a-z0-9\-]*[a-z0-9])?')
+        # * matches exactly one subdomain level: api.domain.com but not api.v1.domain.com
+        # Pattern: subdomain. where subdomain is [a-z0-9]([a-z0-9-]*[a-z0-9])?
+        escaped = escaped.replace('__SINGLE_WILDCARD__', r'[a-z0-9]([a-z0-9\-]*[a-z0-9])?'  + r'\.')
         
         return escaped
     
