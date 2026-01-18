@@ -1,0 +1,64 @@
+{
+  "https://trade.sfox.com": {
+    "url": "https://trade.sfox.com",
+    "status_code": 200,
+    "title": "sFOX - Advanced Bitcoin Trading",
+    "content": {
+      "title": "sFOX - Advanced Bitcoin Trading",
+      "description": "",
+      "keywords": [],
+      "headings": {
+        "h1": [],
+        "h2": [
+          "Open sFOX"
+        ],
+        "h3": []
+      },
+      "paragraphs": [
+        "For a better trading experience, try the sFOX Mobile App. Download using the links below:"
+      ],
+      "links": [],
+      "tables": [],
+      "code_blocks": [],
+      "scripts": [
+        "https://code.gist.build/web/latest/gist.min.js",
+        "https://assets.customer.io/assets/in-app.js",
+        "https://widget.intercom.io/widget/em91ccn5",
+        "https://www.googletagmanager.com/gtag/js?id=G-0CZ8MJRRMD&cx=c&gtm=4e5ca1",
+        "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+        "https://www.googletagmanager.com/gtm.js?id=GTM-5G2LM8QR&l=dataLayer",
+        "https://static.ads-twitter.com/uwt.js",
+        "https://www.google-analytics.com/analytics.js",
+        "https://static.ads-twitter.com/uwt.js",
+        "https://cdn.segment.com/next-integrations/integrations/vendor/commons.a61d7bea37d2de5d4b69.js.gz"
+      ],
+      "meta_tags": {
+        "description": "",
+        "viewport": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+        "referrer": "origin-when-cross-origin",
+        "sfox-web/config/environment": "%7B%22modulePrefix%22%3A%22sfox-web%22%2C%22environment%22%3A%22production%22%2C%22host%22%3A%22https%3A%2F%2Fapi.sfox.com%22%2C%22rootURL%22%3A%22%2F%22%2C%22locationType%22%3A%22auto%22%2C%22debug%22%3Afalse%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%2C%22_APPLICATION_TEMPLATE_WRAPPER%22%3Afalse%2C%22_DEFAULT_ASYNC_OBSERVERS%22%3Atrue%2C%22_JQUERY_INTEGRATION%22%3Afalse%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%7D%2C%22APP%22%3A%7B%22LOG_EVENT_TRACKING%22%3Afalse%2C%22name%22%3A%22sfox-web%22%2C%22version%22%3A%222025.5.20.0.0%2Be78e90b0%22%7D%2C%22exposeFeatureFlags%22%3Atrue%2C%22exposeRouter%22%3Atrue%2C%22remoteENV%22%3A%22production%22%2C%22socketio-domain%22%3A%22https%3A%2F%2Fapi.sfox.com%22%2C%22version%22%3A%22v1%22%2C%22ws%22%3A%22wss%3A%2F%2Fws.sfox.com%2Fws%22%2C%22ENDPOINT_HOSTS%22%3A%7B%22CHART_DATA%22%3A%22https%3A%2F%2Fchartdata.sfox.com%22%7D%2C%22intercom%22%3A%7B%22appId%22%3A%22em91ccn5%22%7D%2C%22sentry%22%3A%7B%22development%22%3Afalse%2C%22environment%22%3A%22production%22%2C%22debug%22%3Afalse%2C%22dsn%22%3A%22https%3A%2F%2Fa430b0b044d245ec8c4d013c5f6f7030%40o87606.ingest.sentry.io%2F190730%22%2C%22tracesSampleRate%22%3A0.01%7D%2C%22segmentio%22%3A%7B%22development%22%3Afalse%2C%22key%22%3A%22WTnLTCKzAJZ61gC3n9nSHPe2DBvCdXbt%22%7D%2C%22saml%22%3A%7B%22allowedOrigins%22%3A%5B%5D%7D%2C%22recaptcha%22%3A%7B%22key%22%3A%226LdY7OskAAAAAAMJO75As1ggf69e55YYiNwViSIp%22%2C%22checkboxKey%22%3A%226LdCUmIqAAAAAPUvf_ZWCNvkMZ8l2ZLJu3D2BuO-%22%7D%2C%22ember-plaid%22%3A%7B%22apiVersion%22%3A%22v2%22%2C%22clientName%22%3A%22SFOX%22%2C%22product%22%3A%5B%22auth%22%2C%22identity%22%5D%2C%22key%22%3A%220b041cd9e9fbf1e7d93a0d5a39f5b9%22%2C%22env%22%3A%22production%22%7D%2C%22ember-cli-mirage%22%3A%7B%22enabled%22%3Afalse%2C%22usingProxy%22%3Afalse%2C%22useDefaultPassthroughs%22%3Atrue%7D%2C%22%40sentry%2Fember%22%3A%7B%22sentry%22%3A%7B%22development%22%3Afalse%2C%22environment%22%3A%22production%22%2C%22debug%22%3Afalse%2C%22dsn%22%3A%22https%3A%2F%2Fa430b0b044d245ec8c4d013c5f6f7030%40o87606.ingest.sentry.io%2F190730%22%2C%22tracesSampleRate%22%3A0.01%7D%7D%2C%22web3WalletCore%22%3A%7B%22key%22%3A%22a6bead7e42fe5b30808c600f612fc485%22%7D%2C%22customerIo%22%3A%7B%22siteId%22%3A%2267b573acacaeb13de4a2%22%7D%2C%22featureFlags%22%3A%7B%22allow2FAChange%22%3Afalse%2C%22profitLossReport%22%3Afalse%2C%22balanceReport%22%3Atrue%2C%22showMarketDataPage%22%3Atrue%2C%22shorting%22%3Atrue%2C%22referralCodes%22%3Afalse%2C%22postTradeAnalytics%22%3Atrue%2C%22postTradeSettlementPositions%22%3Atrue%2C%22ordersWebsocket%22%3Atrue%2C%22balancesEndPoint%22%3Atrue%2C%22orderUpdatePolling%22%3Atrue%2C%22safeCustodyLanding%22%3Atrue%2C%22tradingView%22%3Atrue%2C%22maintenance%22%3Afalse%2C%22showNDFs%22%3Afalse%2C%22staking%22%3Atrue%2C%22feeRates%22%3Atrue%2C%22supportRedirect%22%3Atrue%2C%22ssoRoutes%22%3Afalse%2C%22ptsSegregatedCollateral%22%3Atrue%2C%22walletConnect%22%3Atrue%2C%22allowUsdcOverTron%22%3Afalse%2C%22lendingEnabled%22%3Afalse%2C%22allowManualBankLink%22%3Afalse%2C%22showTOSModal%22%3Afalse%2C%22showHomePageLayout%22%3Atrue%2C%22productAccess%22%3Afalse%2C%22showTravelRule%22%3Afalse%2C%22showAccountBanking%22%3Atrue%2C%22showProfilePage%22%3Atrue%2C%22showAccountOrdersRedesign%22%3Afalse%7D%2C%22exportApplicationGlobal%22%3Afalse%7D"
+      },
+      "text": "Sign In\nSign Up\nOpen sFOX\n\nFor a better trading experience, try the sFOX Mobile App. Download using the links below:\n\nOPEN IN THE APP ",
+      "metadata": {
+        "url": "https://trade.sfox.com",
+        "extracted_at": "2026-01-03T16:44:23.432966"
+      }
+    },
+    "apis_discovered": [],
+    "api_calls_intercepted": [],
+    "forms": [],
+    "technologies": [],
+    "libraries": [],
+    "links_in_scope": [],
+    "links_out_scope": [],
+    "network_traffic": [],
+    "buttons": [],
+    "inputs": [],
+    "content_hash": "0dbc203b1cdc5ed78772af00a4bf048560711d06664e755a526c676b444427d1",
+    "load_time": 3.901646375656128,
+    "timestamp": "2026-01-03T16:44:19.573532",
+    "authenticated": false,
+    "page_type": "static_page",
+    "error": null
+  }
+}

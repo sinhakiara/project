@@ -92,3 +92,9 @@ class PatternLibrary:
             'learned_patterns': len(self.learned_patterns),
             'categories': len(self.patterns)
         }
+    def create_api_interceptor(self, *args, **kwargs):
+        # Provide real logic if you know what should happen,
+        # or just return None/log for now to unblock crawling:
+        if hasattr(self, "logger"):
+            self.logger.debug("PatternLibrary.create_api_interceptor() called (stub)")
+        return None   

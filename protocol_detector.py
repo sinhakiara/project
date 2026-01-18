@@ -144,7 +144,7 @@ class ProtocolDetector:
         return None
     
     @classmethod
-    def detect_all(cls, html: str, url: str, headers: Dict[str, str]) -> Dict[str, Any]:
+    async def detect_all(cls, html: str, url: str, headers: Dict[str, str]) -> Dict[str, Any]:
         """
         Run all protocol detections.
         
@@ -162,3 +162,16 @@ class ProtocolDetector:
             'sse': cls.detect_sse(headers),
             'rest_api': cls.detect_rest_api(url, html),
         }
+    def detect(self, html: str, url: str, headers: dict) -> dict:
+        """
+        Run all protocol detections (instance-style).
+
+        Args:
+            html: HTML content
+            url: Page URL
+            headers: Response headers
+
+        Returns:
+            Dictionary with all detected protocols
+        """
+        return self.detect_all(html, url, headers)

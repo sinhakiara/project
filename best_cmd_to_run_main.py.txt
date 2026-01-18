@@ -1,0 +1,57 @@
+python3 main.py --log-level INFO crawl https://blallab.com --in-scope "blallab.com" "*.blallab.com" --output output/blallab_crawl_$(date +%Y%m%d_%H%M%S).json --format json --depth 10
+
+Examples of Command Executions
+1. Run a simple crawl
+
+python3 main.py crawl https://example.com --output results.json --format json
+
+
+2.Crawl with dashboard and Tor
+python3 main.py crawl https://example.com --dashboard --tor
+
+
+3. Crawl with proxies and CAPTCHA solver
+python3 main.py crawl https://example.com --proxy --proxy-file proxies.txt --captcha --captcha-type 2captcha
+
+
+4. API server
+python3 main.py server --port 8080
+
+
+5. Distributed master
+python3 main.py distributed --master https://example.com --depth 3
+
+
+6. Resume from checkpoint
+python3 main.py resume checkpoint001 --output resumed.json
+
+
+7. Scope testing
+python3 main.py scope-test --in-scope '*.example.com' --out-of-scope 'ads.example.com' --test-urls 'https://ads.example.com https://www.example.com'
+
+
+8. ALL
+python3 main.py crawl https://example.com \
+  --depth 5 \
+  --in-scope "*.example.com" \
+  --out-of-scope "ads.example.com" \
+  --output results.json \
+  --format json \
+  --dashboard \
+  --tor \
+  --proxy --proxy-file proxies.txt \
+  --vision \
+  --captcha --captcha-type 2captcha \
+  --webhooks
+
+OR
+
+python3 main.py crawl https://example.com --depth 5 --in-scope "*.example.com" --out-of-scope "ads.example.com" --output results.json --format json --dashboard --tor --proxy --proxy-file proxies.txt --vision --captcha --captcha-type 2captcha --webhooks
+
+
+
+python3 main.py crawl https://example.com/dashboard \
+  --login-url https://example.com/login \
+  --username myuser --password mypass \
+  --form-fields '{"#username": "myuser", "#pw": "mypassword"}' \
+  --submit-selector "#login-button"
